@@ -1,0 +1,12 @@
+FF Live Mic YouTube RTMP Android project
+Version: 0.9.0 (versionCode 9)
+
+Included: Android screen capture, RootEncoder RTMP pipeline, mixed audio source, selectable 720p/1080p output cap, 30/60 FPS and 4/6/8 Mbps video bitrate.
+
+Important limitations:
+- Internal playback capture requires Android 10+ and app/game capture policy permission.
+- Android may silence this app microphone while Free Fire voice communication owns the mic. Accessibility cannot bypass Android microphone privacy rules.
+- YouTube Live Chat comments overlay is not implemented in this version; it requires YouTube Data API + OAuth + overlay integration.
+- 60 FPS/1080p depends on device encoder, thermal state and network.
+
+Build/test status: Source package updated. No local Android build or physical-device/YouTube test has been performed for v0.9.0. Use GitHub Actions to build and test an unlisted stream first.
