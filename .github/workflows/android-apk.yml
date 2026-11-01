@@ -46,23 +46,24 @@ jobs:
 
       - name: Verify project files
         run: |
-          echo "Checking project files..."
-          for f in \
-            settings.gradle.kts \
-            build.gradle.kts \
-            app/build.gradle.kts \
-            app/src/main/AndroidManifest.xml \
-            app/src/main/java/com/fflivemic/app/YouTubeRtmpConfig.kt
-          do
-            if [ -f "$f" ]; then
-              echo "FOUND: $f"
-            else
-              echo "MISSING: $f"
-            fi
-          done
+          echo "PROJECT ROOT:"
+          pwd
+          echo "ROOT FILES:"
+          ls -la
+          echo "APP DIRECTORY:"
+          ls -la app
+          echo "SETTINGS FILE:"
+          cat settings.gradle.kts
+          echo "APP BUILD FILE:"
+          cat app/build.gradle.kts
+
+      - name: Show Gradle projects and tasks
+        run: |
+          gradle projects
+          gradle tasks --all
 
       - name: Build debug APK
-        run: gradle --no-daemon --stacktrace assembleDebug
+        run: gradle --no-daemon --stacktrace :app:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
