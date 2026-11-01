@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.fflivemic"
+    namespace = "com.fflivemic.app"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.fflivemic"
+        applicationId = "com.fflivemic.app"
         minSdk = 23
         targetSdk = 35
         versionCode = 1
